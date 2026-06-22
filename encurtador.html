@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aguarde... — Platina Painéis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .enc-wrap {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 30px 20px; text-align: center; position: relative; z-index: 1;
+    }
+    .enc-box {
+      background: linear-gradient(135deg, rgba(61,0,112,.45), rgba(16,0,32,.8));
+      border: 1px solid rgba(155,48,255,.4);
+      border-radius: 18px; padding: 40px 36px;
+      max-width: 500px; width: 100%;
+      box-shadow: 0 0 40px rgba(155,48,255,.2);
+    }
+    .enc-icon { font-size: 3rem; margin-bottom: 12px; }
+    .enc-title {
+      font-family: 'Orbitron', sans-serif; font-size: 1.4rem; color: #9b30ff;
+      margin-bottom: 8px; letter-spacing: 2px;
+    }
+    .enc-tool-name {
+      font-family: 'Orbitron', sans-serif; font-size: 1rem; color: #d4a800;
+      margin-bottom: 20px; letter-spacing: 3px;
+    }
+    .enc-steps {
+      display: flex; justify-content: center; gap: 8px;
+      margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .step-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(61,0,112,.5); border: 2px solid rgba(155,48,255,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Orbitron', sans-serif; font-size: .7rem; color: #c0a0e0;
+      transition: all .3s;
+    }
+    .step-dot.active {
+      background: linear-gradient(135deg, #6a0dad, #9b30ff);
+      border-color: #9b30ff; color: #fff;
+      box-shadow: 0 0 12px rgba(155,48,255,.6);
+    }
+    .step-dot.done {
+      background: linear-gradient(135deg, #00aa55, #00ff88);
+      border-color: #00ff88; color: #fff;
+    }
+    .enc-msg {
+      font-size: .95rem; color: #c0a0e0; margin-bottom: 20px; line-height: 1.5;
+    }
+    .enc-timer {
+      font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: #9b30ff;
+      margin-bottom: 20px; font-weight: 900;
+      text-shadow: 0 0 20px rgba(155,48,255,.7);
+    }
+    .enc-btn {
+      display: inline-block; padding: 14px 36px;
+      background: linear-gradient(135deg, #6a0dad, #9b30ff);
+      border: none; border-radius: 10px; color: #fff;
+      font-family: 'Orbitron', sans-serif; font-size: .85rem; font-weight: 700;
+      letter-spacing: 2px; cursor: pointer; text-transform: uppercase;
+      text-decoration: none; transition: all .2s;
+      box-shadow: 0 4px 20px rgba(155,48,255,.5);
+    }
+    .enc-btn:disabled, .enc-btn.disabled {
+      opacity: .4; cursor: not-allowed; pointer-events: none;
+    }
+    .enc-btn:not(:disabled):hover {
+      background: linear-gradient(135deg, #9b30ff, #bf00ff);
+      box-shadow: 0 6px 30px rgba(191,0,255,.7);
+    }
+    .enc-ad-area {
+      width: 100%; max-width: 500px; min-height: 120px;
+      margin: 20px auto;
+      background: rgba(61,0,112,.15);
+      border: 1px solid rgba(106,13,173,.2); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .enc-progress {
+      width: 100%; background: rgba(61,0,112,.3);
+      border-radius: 10px; height: 6px; margin-bottom: 20px; overflow: hidden;
+    }
+    .enc-progress-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, #6a0dad, #9b30ff, #bf00ff);
+      border-radius: 10px; transition: width 1s linear;
+      box-shadow: 0 0 10px rgba(155,48,255,.6);
+    }
+    .enc-back { margin-top: 14px; font-size: .78rem; color: #c0a0e0; text-decoration: none; }
+    .enc-back:hover { color: #9b30ff; }
+  </style>
+</head>
+<body>
+<div class="enc-wrap">
+
+  <div class="enc-ad-area" id="ad-enc-top"></div>
+
+  <div class="enc-box">
+    <div class="enc-icon">⚡</div>
+    <div class="enc-title">PREPARANDO ACESSO</div>
+    <div class="enc-tool-name" id="tool-display">CARREGANDO...</div>
+
+    <div class="enc-steps" id="steps-row">
+      <div class="step-dot active" id="step-1">1</div>
+      <div class="step-dot" id="step-2">2</div>
+      <div class="step-dot" id="step-3">3</div>
+      <div class="step-dot" id="step-4">4</div>
+      <div class="step-dot" id="step-5">5</div>
+      <div class="step-dot" id="step-6">6</div>
+      <div class="step-dot" id="step-7">7</div>
+    </div>
+
+    <div class="enc-progress"><div class="enc-progress-bar" id="prog-bar"></div></div>
+
+    <div class="enc-msg" id="enc-msg">Verificando sua conexão...</div>
+    <div class="enc-timer" id="enc-timer">15</div>
+
+    <button class="enc-btn disabled" id="enc-btn" onclick="nextStep()">
+      CONTINUAR →
+    </button>
+
+    <br>
+    <a class="enc-back" href="index.html">← Voltar ao início</a>
+  </div>
+
+  <div class="enc-ad-area" id="ad-enc-bottom"></div>
+
+</div>
+
+<script>
+  // Mapeamento de ferramentas
+  const tools = {
+    'uriel-xit': { name: 'URIEL XIT', url: '#' },
+    'regedit':   { name: 'REGEDIT',   url: '#' },
+    'fake-lag':  { name: 'FAKE LAG',  url: '#' },
+    'proxy':     { name: 'PROXY',     url: '#' },
+    'hs-painel': { name: 'HS 100% PAINEL', url: '#' }
+  };
+
+  // Mensagens por etapa
+  const stepMsgs = [
+    'Verificando sua conexão...',
+    'Autenticando acesso à ferramenta...',
+    'Checando disponibilidade do servidor...',
+    'Preparando pacote de download...',
+    'Validando integridade dos arquivos...',
+    'Quase lá! Finalizando configuração...',
+    'Acesso liberado! Clique em continuar.'
+  ];
+
+  const stepTimes = [15, 12, 12, 10, 10, 10, 0];
+
+  let currentStep = 1;
+  let timeLeft = stepTimes[0];
+  let interval;
+
+  // Pega o tool da URL
+  const params = new URLSearchParams(window.location.search);
+  const toolId  = params.get('id') || 'uriel-xit';
+  const tool    = tools[toolId] || tools['uriel-xit'];
+
+  document.getElementById('tool-display').textContent = tool.name;
+
+  function updateProgress() {
+    const pct = ((currentStep - 1) / 7) * 100 + (((stepTimes[currentStep-1] - timeLeft) / stepTimes[currentStep-1]) * (100/7));
+    document.getElementById('prog-bar').style.width = Math.min(pct, 100) + '%';
+  }
+
+  function startTimer() {
+    document.getElementById('enc-msg').textContent = stepMsgs[currentStep - 1];
+    document.getElementById('enc-btn').classList.add('disabled');
+
+    if (currentStep === 7) {
+      document.getElementById('enc-timer').textContent = '✓';
+      document.getElementById('prog-bar').style.width = '100%';
+      document.getElementById('enc-btn').classList.remove('disabled');
+      document.getElementById('enc-btn').textContent = '🔓 ACESSAR FERRAMENTA';
+      document.getElementById('enc-btn').onclick = function() {
+        window.location.href = tool.url;
+      };
+      return;
+    }
+
+    interval = setInterval(() => {
+      timeLeft--;
+      document.getElementById('enc-timer').textContent = timeLeft;
+      updateProgress();
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        document.getElementById('enc-btn').classList.remove('disabled');
+        document.getElementById('enc-btn').textContent = 'CONTINUAR →';
+      }
+    }, 1000);
+  }
+
+  function nextStep() {
+    if (document.getElementById('enc-btn').classList.contains('disabled')) return;
+
+    // Marca step atual como done
+    document.getElementById('step-' + currentStep).classList.remove('active');
+    document.getElementById('step-' + currentStep).classList.add('done');
+    currentStep++;
+
+    if (currentStep <= 7) {
+      document.getElementById('step-' + currentStep).classList.add('active');
+      timeLeft = stepTimes[currentStep - 1];
+      startTimer();
+    }
+  }
+
+  // Inicia
+  startTimer();
+</script>
+<script src="ads.js"></script>
+</body>
+</html>

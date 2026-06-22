@@ -1,10 +1,10 @@
 (function() {
   setTimeout(function() {
-    var s = document.createElement('script');
-    s.src = 'https://3nbf4.com/act/files/tag.min.js';
-    s.setAttribute('data-zone', '11184055');
-    s.async = true;
-    s.setAttribute('data-cfasync', 'false');
-    document.head.appendChild(s);
+    var s1 = document.createElement('script');
+    s1.src = 'https://quge5.com/88/tag.min.js';
+    s1.setAttribute('data-zone', '252327');
+    s1.async = true;
+    s1.setAttribute('data-cfasync', 'false');
+    document.head.appendChild(s1);
   }, 10000);
 })();

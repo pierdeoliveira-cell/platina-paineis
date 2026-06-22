@@ -246,3 +246,32 @@ footer span { color: var(--roxo-vivo); }
   .tools-grid { grid-template-columns: 1fr; }
   .logo-text h1 { font-size: 1.3rem; }
 }
+
+
+/* ── EXTRA AD STYLES ── */
+.ad-sticky {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ad-unit { min-width: 155px; min-height: 130px; }
+.ad-banner-mid {
+  width: 100%; min-height: 90px; margin: 20px 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(61,0,112,.1); border: 1px solid rgba(106,13,173,.15);
+  border-radius: 8px; overflow: hidden;
+}
+.ad-in-grid {
+  background: rgba(61,0,112,.15); border: 1px solid rgba(106,13,173,.2);
+  border-radius: 14px; min-height: 120px;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.ad-fixed-bottom {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  z-index: 999; background: rgba(10,0,16,.95);
+  border-top: 1px solid rgba(155,48,255,.3);
+  padding: 4px 10px; min-height: 60px; min-width: 320px;
+  display: flex; align-items: center; justify-content: center;
+}

@@ -10,19 +10,14 @@
 </head>
 <body>
 
-<!-- BANNER TOPO -->
-<div class="ad-top">
-  <div id="ad-banner-top"></div>
-</div>
-
 <div class="page-wrapper">
 
   <!-- SIDEBAR ESQUERDA -->
   <aside class="sidebar left">
     <div class="ad-sticky">
       <div id="ad-left-1" class="ad-unit"></div>
-      <div id="ad-left-2" class="ad-unit" style="margin-top:16px;"></div>
-      <div id="ad-left-3" class="ad-unit" style="margin-top:16px;"></div>
+      <div id="ad-left-2" class="ad-unit"></div>
+      <div id="ad-left-3" class="ad-unit"></div>
     </div>
   </aside>
 
@@ -69,11 +64,6 @@
         </div>
       </div>
 
-      <!-- BANNER ENTRE HERO E FERRAMENTAS -->
-      <div class="ad-banner-mid">
-        <div id="ad-mid-1" class="ad-unit"></div>
-      </div>
-
       <div class="section-title">⚙️ Ferramentas Disponíveis</div>
       <div class="tools-grid">
 
@@ -91,11 +81,6 @@
           <span class="tool-badge badge-new">✨ NOVO</span>
           <div class="tool-desc">Otimização e configuração de sistema. Interface simples e poderosa.</div>
           <a class="btn-download" href="encurtador.html?id=regedit">↓ Acessar Agora</a>
-        </div>
-
-        <!-- BANNER NO MEIO DA GRADE -->
-        <div class="ad-in-grid">
-          <div id="ad-grid-mid" class="ad-unit"></div>
         </div>
 
         <div class="tool-card">
@@ -124,9 +109,11 @@
 
       </div>
 
-      <!-- BANNER APÓS FERRAMENTAS -->
-      <div class="ad-banner-mid">
-        <div id="ad-mid-2" class="ad-unit"></div>
+      <!-- FAIXA DE ADS PEQUENOS ABAIXO DAS FERRAMENTAS -->
+      <div class="ad-row">
+        <div id="ad-row-1" class="ad-unit-small"></div>
+        <div id="ad-row-2" class="ad-unit-small"></div>
+        <div id="ad-row-3" class="ad-unit-small"></div>
       </div>
 
       <div class="section-title">ℹ️ Por que nos escolher?</div>
@@ -137,15 +124,22 @@
         <div class="info-card"><div class="info-icon">💬</div><div class="info-title">Suporte</div><div class="info-text">Time disponível para ajudar 24/7.</div></div>
       </div>
 
-      <!-- BANNER ANTES DO FOOTER -->
-      <div class="ad-banner-mid">
-        <div id="ad-bottom" class="ad-unit"></div>
+      <!-- FAIXA DE ADS ABAIXO DO INFO -->
+      <div class="ad-row">
+        <div id="ad-row-4" class="ad-unit-small"></div>
+        <div id="ad-row-5" class="ad-unit-small"></div>
+        <div id="ad-row-6" class="ad-unit-small"></div>
       </div>
 
     </main>
 
     <footer>
       <span>PLATINA PAINÉIS</span> © 2025 — Todos os direitos reservados &nbsp;|&nbsp; Ferramentas Premium Gratuitas
+      <!-- ADS NO FOOTER -->
+      <div class="ad-row" style="margin-top:10px;">
+        <div id="ad-footer-1" class="ad-unit-small"></div>
+        <div id="ad-footer-2" class="ad-unit-small"></div>
+      </div>
     </footer>
 
   </div>
@@ -154,16 +148,17 @@
   <aside class="sidebar right">
     <div class="ad-sticky">
       <div id="ad-right-1" class="ad-unit"></div>
-      <div id="ad-right-2" class="ad-unit" style="margin-top:16px;"></div>
-      <div id="ad-right-3" class="ad-unit" style="margin-top:16px;"></div>
+      <div id="ad-right-2" class="ad-unit"></div>
+      <div id="ad-right-3" class="ad-unit"></div>
     </div>
   </aside>
 
 </div>
 
-<!-- BANNER FIXO NO RODAPÉ (canto inferior) -->
+<!-- BANNER FIXO PEQUENO NO RODAPÉ -->
 <div class="ad-fixed-bottom">
-  <div id="ad-fixed-bot" class="ad-unit"></div>
+  <span class="ad-label">anúncio</span>
+  <div id="ad-fixed-bot" class="ad-unit-small"></div>
 </div>
 
 <script src="ads.js"></script>

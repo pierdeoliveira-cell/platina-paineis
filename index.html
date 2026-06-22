@@ -10,15 +10,20 @@
 </head>
 <body>
 
-<!-- MONETAG BANNER TOP -->
-<div class="ad-top" id="ad-top-banner"></div>
+<!-- BANNER TOPO -->
+<div class="ad-top">
+  <div id="ad-banner-top"></div>
+</div>
 
 <div class="page-wrapper">
 
   <!-- SIDEBAR ESQUERDA -->
   <aside class="sidebar left">
-    <div class="ad-box" id="ad-left-1"></div>
-    <div class="ad-box" id="ad-left-2"></div>
+    <div class="ad-sticky">
+      <div id="ad-left-1" class="ad-unit"></div>
+      <div id="ad-left-2" class="ad-unit" style="margin-top:16px;"></div>
+      <div id="ad-left-3" class="ad-unit" style="margin-top:16px;"></div>
+    </div>
   </aside>
 
   <!-- CONTEÚDO -->
@@ -64,8 +69,10 @@
         </div>
       </div>
 
-      <!-- AD MEIO -->
-      <div class="ad-inline" id="ad-mid"></div>
+      <!-- BANNER ENTRE HERO E FERRAMENTAS -->
+      <div class="ad-banner-mid">
+        <div id="ad-mid-1" class="ad-unit"></div>
+      </div>
 
       <div class="section-title">⚙️ Ferramentas Disponíveis</div>
       <div class="tools-grid">
@@ -84,6 +91,11 @@
           <span class="tool-badge badge-new">✨ NOVO</span>
           <div class="tool-desc">Otimização e configuração de sistema. Interface simples e poderosa.</div>
           <a class="btn-download" href="encurtador.html?id=regedit">↓ Acessar Agora</a>
+        </div>
+
+        <!-- BANNER NO MEIO DA GRADE -->
+        <div class="ad-in-grid">
+          <div id="ad-grid-mid" class="ad-unit"></div>
         </div>
 
         <div class="tool-card">
@@ -112,12 +124,22 @@
 
       </div>
 
+      <!-- BANNER APÓS FERRAMENTAS -->
+      <div class="ad-banner-mid">
+        <div id="ad-mid-2" class="ad-unit"></div>
+      </div>
+
       <div class="section-title">ℹ️ Por que nos escolher?</div>
       <div class="info-grid">
         <div class="info-card"><div class="info-icon">🛡️</div><div class="info-title">Seguro</div><div class="info-text">Todos os arquivos verificados e seguros.</div></div>
         <div class="info-card"><div class="info-icon">⚡</div><div class="info-title">Rápido</div><div class="info-text">Download e acesso em segundos.</div></div>
         <div class="info-card"><div class="info-icon">🔄</div><div class="info-title">Atualizado</div><div class="info-text">Ferramentas sempre na versão mais recente.</div></div>
         <div class="info-card"><div class="info-icon">💬</div><div class="info-title">Suporte</div><div class="info-text">Time disponível para ajudar 24/7.</div></div>
+      </div>
+
+      <!-- BANNER ANTES DO FOOTER -->
+      <div class="ad-banner-mid">
+        <div id="ad-bottom" class="ad-unit"></div>
       </div>
 
     </main>
@@ -130,10 +152,18 @@
 
   <!-- SIDEBAR DIREITA -->
   <aside class="sidebar right">
-    <div class="ad-box" id="ad-right-1"></div>
-    <div class="ad-box" id="ad-right-2"></div>
+    <div class="ad-sticky">
+      <div id="ad-right-1" class="ad-unit"></div>
+      <div id="ad-right-2" class="ad-unit" style="margin-top:16px;"></div>
+      <div id="ad-right-3" class="ad-unit" style="margin-top:16px;"></div>
+    </div>
   </aside>
 
+</div>
+
+<!-- BANNER FIXO NO RODAPÉ (canto inferior) -->
+<div class="ad-fixed-bottom">
+  <div id="ad-fixed-bot" class="ad-unit"></div>
 </div>
 
 <script src="ads.js"></script>

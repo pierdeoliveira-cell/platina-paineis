@@ -275,3 +275,28 @@ footer span { color: var(--roxo-vivo); }
   padding: 4px 10px; min-height: 60px; min-width: 320px;
   display: flex; align-items: center; justify-content: center;
 }
+
+
+/* ── AD SIZE OVERRIDE ── */
+.ad-unit { min-width: 120px; min-height: 60px; max-height: 90px; }
+.ad-banner-mid { min-height: 60px; max-height: 70px; margin: 10px 0; }
+.ad-in-grid { min-height: 60px; max-height: 70px; }
+.ad-fixed-bottom { min-height: 50px; padding: 2px 8px; }
+.sidebar .ad-unit { min-width: 120px; min-height: 60px; max-height: 90px; }
+
+/* ── AD ROW (faixa pequena) ── */
+.ad-row {
+  display: flex; gap: 10px; justify-content: center;
+  margin: 14px 0; flex-wrap: wrap;
+}
+.ad-unit-small {
+  min-width: 100px; min-height: 50px; max-height: 60px;
+  flex: 1; max-width: 200px;
+  background: rgba(61,0,112,.1);
+  border-radius: 6px; overflow: hidden;
+}
+.ad-label {
+  font-size: 9px; color: rgba(192,160,224,.4);
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-right: 8px;
+}
